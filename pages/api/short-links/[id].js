@@ -1,10 +1,7 @@
 export default function handler(req, res) {
   switch (req.method) {
     case "POST":
-      res.status(201).send({
-        title: "네이버",
-        url: "https://www.naver.com",
-      });
+      res.status(201).send(req.body);
       break;
 
     case "GET":
