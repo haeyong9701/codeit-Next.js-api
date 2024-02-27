@@ -2,4 +2,17 @@ GET http://localhost:3000/api/
 
 ###
  
-GET http://localhost:3000/api/short-links/1233
+GET http://localhost:3000/api/short-links/1233?q=codeit
+
+###
+
+POST  http://localhost:3000/api/short-links/123
+Content-Type: application/json
+
+{
+  "title": "codeit"
+}
+
+###
+
+PATCH   http://localhost:3000/api/short-links/123
