@@ -1,19 +1,16 @@
-GET http://localhost:3000/api/short-links/
-
-###
- 
-GET http://localhost:3000/api/short-links/1233?q=codeit
-
-###
-
-POST  http://localhost:3000/api/short-links/123
+POST http://localhost:3000/api/short-links/
 Content-Type: application/json
 
 {
-  "title": "위키피디아 Next.jsdddd",
-  "url": "https://en.wikipedia.org/wiki/Next.js"
+  "title": "codeit2",
+  "url": "https://codeit.kr"
 }
 
 ###
 
-PATCH   http://localhost:3000/api/short-links/123
+GET http://localhost:3000/api/short-links/65dec0a3d21658914c57ce79
+
+###
+
+GET http://localhost:3000/api/short-links/
+

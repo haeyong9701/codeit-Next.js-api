@@ -1,9 +1,9 @@
 import dbConnect from "@/db/dbConnect";
-import mongoose from "mongoose";
+import ShortLink from "@/db/models/ShortLink";
 
 export default async function handler(req, res) {
   await dbConnect();
-  console.log(mongoose.connection.readyState);
+  const { id } = req.query;
 
   switch (req.method) {
     case "POST":
@@ -11,23 +11,8 @@ export default async function handler(req, res) {
       break;
 
     case "GET":
-      res.send([
-        {
-          id: 1,
-          title: "어딘가1",
-          url: "https://www.wswwww.com",
-        },
-        {
-          id: 2,
-          title: "어딘가2",
-          url: "https://www.aaaaa.com",
-        },
-        {
-          id: 3,
-          title: "어딘가3",
-          url: "https://www.bbbb.com",
-        },
-      ]);
+      const shortLink = await ShortLink.findById(id);
+      res.send(shortLink);
       break;
 
     default:
